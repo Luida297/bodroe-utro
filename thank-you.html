@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Благодарность — Бодрое утро</title>
+  <style>
+    :root { font-family: Arial, Helvetica, sans-serif; color: #15364a; background: #e7edef; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: min(100% - 32px, 1122px); margin: 22px auto; }
+    .toolbar p { margin: 0; font-size: 14px; line-height: 1.5; }
+    .toolbar button { flex: none; padding: 12px 18px; border: 0; border-radius: 9px; background: #15364a; color: white; font: 700 14px Arial, sans-serif; cursor: pointer; }
+    .toolbar button:hover { background: #28556a; }
+    :focus-visible { outline: 3px solid #f28b5b; outline-offset: 3px; }
+    .sheet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: min(100% - 32px, 1122px);
+      min-height: 794px;
+      margin: 0 auto 36px;
+      overflow: hidden;
+      background: #fffaf0;
+      box-shadow: 0 16px 45px #15364a28;
+      isolation: isolate;
+    }
+    .sheet::before { position: absolute; inset: 22px; z-index: -1; border: 2px solid #d7e7df; border-radius: 5px; content: ""; }
+    .corner { position: absolute; z-index: -1; width: 350px; height: 350px; border-radius: 50%; }
+    .corner.top { top: -260px; right: -55px; background: #f6c453; box-shadow: 0 0 0 35px #f6c45330; }
+    .corner.bottom { bottom: -300px; left: -95px; width: 430px; height: 430px; background: #a8d3b9; box-shadow: 0 0 0 40px #a8d3b942; }
+    .dots { position: absolute; top: 166px; right: 75px; z-index: -1; display: grid; grid-template-columns: repeat(4, 9px); gap: 12px; transform: rotate(-15deg); }
+    .dots i { width: 9px; height: 9px; border-radius: 50%; background: #f28b5b; opacity: .7; }
+    .sheet-inner { display: flex; flex: 1; flex-direction: column; padding: 61px 87px 53px; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .identity { display: flex; align-items: center; gap: 12px; color: #15364a; font-size: 15px; font-weight: 800; line-height: 1.1; }
+    .identity small { display: block; margin-top: 5px; color: #54947a; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .identity svg { flex: none; width: 58px; height: 58px; }
+    .topline > span { color: #6b8b89; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-align: right; text-transform: uppercase; }
+    .body { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; padding: 30px 0 22px; text-align: center; }
+    .star { color: #df8b54; font-size: 28px; line-height: 1; }
+    .eyebrow { margin: 21px 0 10px; color: #518c75; font-size: 13px; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 6vw, 77px); font-weight: normal; line-height: 1.08; letter-spacing: -.045em; }
+    .lead { margin: 23px 0 8px; color: #4c6872; font-size: 16px; }
+    .name { display: inline-block; min-width: 270px; max-width: 100%; padding: 4px 10px 9px; border-bottom: 2px solid #e6a478; font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 4vw, 48px); line-height: 1.2; overflow-wrap: anywhere; }
+    .description { max-width: 660px; margin: 22px 0 0; color: #345363; font-size: 17px; line-height: 1.55; }
+    .description strong { color: #dd8056; }
+    .message { margin: 16px 0 0; color: #617b78; font-size: 14px; line-height: 1.4; }
+    .bottomline { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid #c7dbd0; }
+    .field { flex: 1; min-width: 0; }
+    .field span { display: block; margin-bottom: 9px; color: #62817e; font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .field b { display: inline-block; max-width: 100%; min-width: 145px; padding-bottom: 5px; border-bottom: 1px solid #9eb9ad; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+    .field.right { flex: 0 0 160px; text-align: right; }
+    [contenteditable] { cursor: text; }
+    [contenteditable]:hover { background: #f6c45328; }
+    @media (max-width: 720px) {
+      .sheet { min-height: 710px; }
+      .sheet::before { inset: 12px; }
+      .sheet-inner { padding: 33px 32px; }
+      .topline > span { display: none; }
+      .description { font-size: 15px; }
+      .bottomline { gap: 10px; }
+      .field.right { flex-basis: 110px; }
+      .field b { min-width: 0; font-size: 12px; }
+    }
+    @media (max-width: 430px) {
+      .toolbar { align-items: stretch; flex-direction: column; }
+      .sheet-inner { padding: 30px 25px; }
+      .body { padding-block: 38px; }
+      h1 { font-size: 39px; }
+      .name { min-width: 0; font-size: 30px; }
+      .description { font-size: 14px; }
+      .field span { font-size: 9px; }
+    }
+    @page { size: A4 landscape; margin: 0; }
+    @media print {
+      html, body { width: 297mm; height: 210mm; margin: 0; background: white; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none; }
+      .sheet { width: 297mm; height: 210mm; min-height: 0; margin: 0; box-shadow: none; break-inside: avoid; }
+      .sheet::before { inset: 6mm; }
+      .sheet-inner { padding: 16mm 23mm 14mm; }
+      .body { padding-block: 8mm 6mm; }
+      h1 { font-size: 73px; }
+      .name { font-size: 47px; }
+      .description { font-size: 17px; }
+      [contenteditable]:hover { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <p><strong>Шаблон благодарности.</strong> Нажмите на имя, учреждение, подпись или дату, чтобы изменить текст. Для PDF выберите «Сохранить как PDF» в окне печати.</p>
+    <button type="button" onclick="window.print()">Печать / PDF</button>
+  </div>
+
+  <main class="sheet" aria-label="Благодарность за участие в проекте Бодрое утро">
+    <div class="corner top" aria-hidden="true"></div>
+    <div class="corner bottom" aria-hidden="true"></div>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="sheet-inner">
+      <div class="topline">
+        <div class="identity">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Солнце над раскрытой книгой" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="21" r="10" fill="#f6c453"/>
+            <path d="M32 3v5M13 11l4 4M51 11l-4 4M10 25h5M54 25h-5" fill="none" stroke="#f28b5b" stroke-width="3" stroke-linecap="round"/>
+            <path d="M7 38c10-5 19-3 25 2 6-5 15-7 25-2v17c-9-4-18-3-25 2-7-5-16-6-25-2V38Z" fill="#6db89a" stroke="#15364a" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M32 40v17" stroke="#15364a" stroke-width="2"/>
+          </svg>
+          <div>Бодрое утро<small>Двигаемся. Думаем. Начинаем!</small></div>
+        </div>
+        <span>Зарядка для ума и тела<br>7–10 лет</span>
+      </div>
+
+      <div class="body">
+        <span class="star" aria-hidden="true">✳</span>
+        <p class="eyebrow">За участие в проекте</p>
+        <h1>Благодарность</h1>
+        <p class="lead">Благодарим</p>
+        <div class="name" contenteditable="true" role="textbox" aria-label="Имя участника" spellcheck="false">Имя Фамилия</div>
+        <p class="description">за участие в проекте <strong>«Бодрое утро: зарядка для ума и тела»</strong>, готовность двигаться, пробовать новое и начинать день с хорошим настроением.</p>
+        <p class="message">Пусть каждое утро приносит энергию для новых открытий!</p>
+      </div>
+
+      <div class="bottomline">
+        <div class="field"><span>Учреждение</span><b contenteditable="true" role="textbox" aria-label="Учреждение" spellcheck="false">Название учреждения</b></div>
+        <div class="field"><span>Руководитель проекта</span><b contenteditable="true" role="textbox" aria-label="Имя руководителя проекта" spellcheck="false">Имя Фамилия</b></div>
+        <div class="field right"><span>Дата</span><b contenteditable="true" role="textbox" aria-label="Дата" spellcheck="false">«__» ______ 20__ г.</b></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
