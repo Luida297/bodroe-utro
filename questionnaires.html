@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Опросники — Бодрое утро</title>
+  <style>
+    :root { font-family: Arial, Helvetica, sans-serif; color: #15364a; background: #e7edef; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; max-width: 850px; margin: 20px auto; padding: 0 16px; }
+    .toolbar p { margin: 0; font-size: 14px; line-height: 1.5; }
+    .toolbar button { flex: none; padding: 11px 18px; border: 0; border-radius: 7px; background: #15364a; color: white; font: 700 14px Arial, sans-serif; cursor: pointer; }
+    .toolbar button:hover { background: #31576b; }
+    .page { width: min(100% - 24px, 794px); min-height: 1122px; margin: 18px auto; padding: 48px 58px; background: #fffdf7; box-shadow: 0 8px 28px #15364a24; }
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 13px; border-bottom: 3px solid #f6c453; }
+    .brand { color: #15364a; font-size: 17px; font-weight: 800; }
+    .brand span { display: block; margin-top: 3px; color: #498a70; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .page-number { color: #748991; font-size: 12px; }
+    h1 { margin: 29px 0 5px; font-family: Georgia, "Times New Roman", serif; font-size: 31px; font-weight: normal; line-height: 1.15; }
+    .lead { margin: 0 0 16px; color: #536d74; font-size: 13px; line-height: 1.5; }
+    .privacy { margin: 0 0 18px; padding: 10px 12px; border-left: 4px solid #6db89a; background: #eef5ed; font-size: 12px; line-height: 1.5; }
+    ol { margin: 0; padding-left: 24px; }
+    li { margin: 0 0 17px; padding-left: 4px; font-size: 14px; line-height: 1.4; break-inside: avoid; }
+    li strong { font-weight: 700; }
+    .options { margin-top: 6px; color: #344e58; font-size: 13px; line-height: 1.7; }
+    .answer { display: inline-block; margin-right: 12px; white-space: nowrap; }
+    .answer::before { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border: 1.5px solid #15364a; border-radius: 2px; content: ""; vertical-align: -1px; }
+    .lines { display: block; height: 31px; margin-top: 9px; border-bottom: 1px solid #97aaa9; }
+    .lines.two { height: 53px; background: linear-gradient(to bottom, transparent 30px, #97aaa9 30px, #97aaa9 31px, transparent 31px); }
+    .footnote { margin: 19px 0 0; color: #536d74; font-size: 11px; line-height: 1.45; }
+    @media (max-width: 600px) {
+      .toolbar { align-items: stretch; flex-direction: column; }
+      .page { min-height: 0; padding: 28px 24px; }
+      h1 { font-size: 27px; }
+    }
+    @page { size: A4 portrait; margin: 0; }
+    @media print {
+      html, body { margin: 0; background: white; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none; }
+      .page { width: 210mm; height: 297mm; min-height: 0; margin: 0; padding: 13mm 16mm; box-shadow: none; break-after: page; }
+      .page:last-child { break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><p>Четыре анонимные анкеты для оценки потребности в проекте. Каждая анкета печатается на отдельном листе A4.</p><button type="button" onclick="window.print()">Печать / PDF</button></div>
+
+  <section class="page" aria-labelledby="children">
+    <div class="masthead"><div class="brand">Бодрое утро<span>Двигаемся. Думаем. Начинаем!</span></div><span class="page-number">Анкета 1 / 4</span></div>
+    <h1 id="children">Для младшеклассников</h1>
+    <p class="lead">Возраст: 7–10 лет. Отметь подходящие ответы. Правильных и неправильных ответов здесь нет.</p>
+    <p class="privacy">Заполнять анкету можно добровольно и без имени. Взрослый может прочитать вопросы вслух, не подсказывая ответы.</p>
+    <ol>
+      <li><strong>Как ты чаще всего чувствуешь себя перед первым уроком?</strong><div class="options"><span class="answer">Бодро</span><span class="answer">Хочется ещё отдохнуть</span><span class="answer">По-разному</span></div></li>
+      <li><strong>Нравится ли тебе немного двигаться вместе с классом?</strong><div class="options"><span class="answer">Да</span><span class="answer">Иногда</span><span class="answer">Нет</span><span class="answer">Пока не знаю</span></div></li>
+      <li><strong>Хотелось бы тебе делать короткую зарядку с движениями и игрой на внимание?</strong><div class="options"><span class="answer">Да</span><span class="answer">Нет</span><span class="answer">Пока не знаю</span></div></li>
+      <li><strong>Когда тебе было бы удобнее?</strong><div class="options"><span class="answer">Перед первым уроком</span><span class="answer">Между уроками</span><span class="answer">Не хочу участвовать</span><span class="answer">Не знаю</span></div></li>
+      <li><strong>Что тебе интереснее? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Движения под музыку</span><span class="answer">Игра на внимание</span><span class="answer">Упражнения в парах</span><span class="answer">Спокойная разминка</span><span class="answer">Другое: __________</span></div></li>
+      <li><strong>Что может помешать тебе участвовать?</strong><div class="options"><span class="answer">Мало места</span><span class="answer">Не хочется двигаться перед другими</span><span class="answer">Не нравятся упражнения</span><span class="answer">Ничего</span><span class="answer">Другое: __________</span></div></li>
+      <li><strong>Какой ты хочешь видеть нашу зарядку?</strong><span class="lines two"></span></li>
+    </ol>
+  </section>
+
+  <section class="page" aria-labelledby="volunteers">
+    <div class="masthead"><div class="brand">Бодрое утро<span>Двигаемся. Думаем. Начинаем!</span></div><span class="page-number">Анкета 2 / 4</span></div>
+    <h1 id="volunteers">Для старшеклассников-волонтёров</h1>
+    <p class="lead">Отметьте подходящие ответы. Там, где указано, можно выбрать несколько вариантов.</p>
+    <p class="privacy">Анкета добровольная и анонимная. Ответы помогут определить удобный формат и необходимую подготовку волонтёров.</p>
+    <ol>
+      <li><strong>Интересно ли вам помогать проводить короткую зарядку для младших школьников?</strong><div class="options"><span class="answer">Да</span><span class="answer">Возможно</span><span class="answer">Нет</span></div></li>
+      <li><strong>Как часто вы могли бы участвовать?</strong><div class="options"><span class="answer">Несколько раз в неделю</span><span class="answer">Раз в неделю</span><span class="answer">Реже</span><span class="answer">Пока не знаю</span></div></li>
+      <li><strong>Есть ли у вас опыт проведения занятий или игр для младших детей?</strong><div class="options"><span class="answer">Да</span><span class="answer">Нет</span></div></li>
+      <li><strong>Какую роль вам было бы комфортно выполнять? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Показывать движения</span><span class="answer">Объяснять задания</span><span class="answer">Подбирать музыку</span><span class="answer">Готовить карточки упражнений</span><span class="answer">Помогать учителю наблюдать за группой</span></div></li>
+      <li><strong>Что вам понадобится для подготовки? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Готовый сценарий</span><span class="answer">Обучение</span><span class="answer">Памятка по безопасности</span><span class="answer">Репетиция с учителем</span><span class="answer">Другое: __________</span></div></li>
+      <li><strong>Что может помешать участию?</strong><div class="options"><span class="answer">Учебная нагрузка</span><span class="answer">Неудобное расписание</span><span class="answer">Неуверенность перед группой</span><span class="answer">Ничего</span><span class="answer">Другое: __________</span></div></li>
+      <li><strong>Согласны ли вы проводить зарядку в присутствии ответственного педагога?</strong><div class="options"><span class="answer">Да</span><span class="answer">Нет</span><span class="answer">Хотелось бы уточнить обязанности</span></div></li>
+      <li><strong>Какие идеи для зарядки вы предложили бы?</strong><span class="lines two"></span></li>
+    </ol>
+  </section>
+
+  <section class="page" aria-labelledby="parents">
+    <div class="masthead"><div class="brand">Бодрое утро<span>Двигаемся. Думаем. Начинаем!</span></div><span class="page-number">Анкета 3 / 4</span></div>
+    <h1 id="parents">Для родителей младшеклассников</h1>
+    <p class="lead">Отметьте подходящие ответы. Пожалуйста, не указывайте имя ребёнка.</p>
+    <p class="privacy">Участие добровольное и анонимное. Не сообщайте диагнозы и другие медицинские сведения.</p>
+    <ol>
+      <li><strong>Как, по вашему наблюдению, ребёнок обычно чувствует себя перед началом учебного дня?</strong><div class="options"><span class="answer">Бодро</span><span class="answer">Часто не успевает настроиться</span><span class="answer">По-разному</span><span class="answer">Затрудняюсь ответить</span></div></li>
+      <li><strong>Нужна ли, на ваш взгляд, короткая разминка в школе?</strong><div class="options"><span class="answer">Да</span><span class="answer">Нет</span><span class="answer">Затрудняюсь ответить</span></div></li>
+      <li><strong>Как вы относитесь к участию ребёнка в зарядке продолжительностью около 4 минут?</strong><div class="options"><span class="answer">Поддерживаю</span><span class="answer">Хочу узнать подробности</span><span class="answer">Не поддерживаю</span></div></li>
+      <li><strong>Какой формат кажется наиболее удобным?</strong><div class="options"><span class="answer">Перед первым уроком</span><span class="answer">Между уроками</span><span class="answer">Затрудняюсь ответить</span></div></li>
+      <li><strong>Что для вас важно при организации? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Безопасные упражнения</span><span class="answer">Возможность выполнять движения сидя</span><span class="answer">Участие педагога</span><span class="answer">Отсутствие соревнования между детьми</span><span class="answer">Понятная информация об упражнениях</span></div></li>
+      <li><strong>Есть ли опасения или причины, по которым ребёнку может быть некомфортно участвовать? Не указывайте медицинские сведения.</strong><div class="options"><span class="answer">Да: ________________________</span><span class="answer">Нет</span><span class="answer">Затрудняюсь ответить</span></div></li>
+      <li><strong>Как ребёнок обычно относится к коротким двигательным играм?</strong><div class="options"><span class="answer">С интересом</span><span class="answer">По-разному</span><span class="answer">Без интереса</span><span class="answer">Не знаю</span></div></li>
+      <li><strong>Что вы предложили бы учесть при запуске проекта?</strong><span class="lines two"></span></li>
+    </ol>
+  </section>
+
+  <section class="page" aria-labelledby="teachers">
+    <div class="masthead"><div class="brand">Бодрое утро<span>Двигаемся. Думаем. Начинаем!</span></div><span class="page-number">Анкета 4 / 4</span></div>
+    <h1 id="teachers">Для учителей младших классов</h1>
+    <p class="lead">Отметьте подходящие ответы. Там, где указано, можно выбрать несколько вариантов.</p>
+    <p class="privacy">Анкета добровольная и анонимная. Цель — оценить потребность в проекте и условия его проведения.</p>
+    <ol>
+      <li><strong>Проводите ли вы сейчас короткие двигательные паузы?</strong><div class="options"><span class="answer">Регулярно</span><span class="answer">Иногда</span><span class="answer">Нет</span></div></li>
+      <li><strong>Нужна ли вашему классу дополнительная короткая разминка в начале учебного дня?</strong><div class="options"><span class="answer">Да</span><span class="answer">Нет</span><span class="answer">Затрудняюсь ответить</span></div></li>
+      <li><strong>Когда её было бы удобнее проводить?</strong><div class="options"><span class="answer">Перед первым уроком</span><span class="answer">Между уроками</span><span class="answer">Зависит от расписания</span></div></li>
+      <li><strong>Какая продолжительность подходит вашему классу?</strong><div class="options"><span class="answer">До 3 минут</span><span class="answer">3–5 минут</span><span class="answer">Более 5 минут</span></div></li>
+      <li><strong>Какие препятствия вы ожидаете? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Недостаток времени</span><span class="answer">Мало места</span><span class="answer">Сложно организовать группу</span><span class="answer">Нужны варианты упражнений для разных детей</span><span class="answer">Препятствий не ожидаю</span><span class="answer">Другое: __________</span></div></li>
+      <li><strong>Что помогло бы вам использовать проект? Можно выбрать несколько вариантов.</strong><div class="options"><span class="answer">Готовые сценарии</span><span class="answer">Карточки с движениями</span><span class="answer">Видеопример</span><span class="answer">Помощь подготовленных волонтёров</span><span class="answer">Памятка по безопасности</span></div></li>
+      <li><strong>При каких условиях участие старшеклассников-волонтёров было бы удобным?</strong><span class="lines two"></span></li>
+      <li><strong>По каким признакам вы предложили бы оценивать, подходит ли формат классу?</strong><span class="lines two"></span></li>
+    </ol>
+    <p class="footnote">Результаты анкет следует анализировать отдельно по группам. Ответы не доказывают влияние зарядки на успеваемость или здоровье.</p>
+  </section>
+</body>
+</html>
